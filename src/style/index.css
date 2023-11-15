@@ -1,0 +1,288 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap");
+
+:root {
+  font-family: "Poppins", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  /* color primer */
+
+  --cp-grey: #222831;
+  --cp-grey-light: #393e46;
+  --cp-orange: #b55400;
+  --cp-white: #eeeeee;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+  box-sizing: border-box;
+}
+
+.notes-app__container {
+  display: grid;
+  grid-template-columns: 240px auto;
+}
+
+.button-add-note__btn-add {
+  background-color: var(--cp-grey);
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.button-add-note__btn-add:hover {
+  background-color: var(--cp-orange);
+}
+
+.sidebar__container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: var(--cp-grey);
+  text-align: center;
+}
+
+.sidebar__header-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--cp-orange);
+}
+
+.sidebar__menus-wrapper {
+  padding-top: 60px;
+}
+
+.sidebar__menu-title {
+  font-size: 11px;
+  text-align: left;
+  color: var(--cp-white);
+}
+
+.sidebar__btn-menu {
+  display: flex;
+  width: 100%;
+  height: 42px;
+  background-color: var(--cp-grey);
+  margin-top: 12px;
+  justify-content: left;
+  align-items: center;
+  border-radius: 8px;
+  border: solid 0px;
+  padding-left: 22px;
+}
+
+.sidebar__btn-menu:hover {
+  background-color: var(--cp-grey-light);
+  cursor: pointer;
+}
+
+.sidebar__btn-menu-name {
+  padding-left: 13px;
+  color: var(--cp-orange);
+}
+
+.sidebar__btn-menu.active {
+  background-color: var(--cp-grey-light);
+}
+
+.main-section__container {
+  background-color: var(--cp-grey-light);
+  padding: 20px;
+}
+
+.searchbar__container {
+  margin-top: 30px;
+}
+
+.searchbar__input {
+  width: 100%;
+  height: 32px;
+  border-radius: 8px;
+  padding: 0 8px;
+  border: 0px;
+}
+
+.searchbar__input:focus {
+  outline: none;
+}
+
+.notelist__container {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.noteitem {
+  height: max-content;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--cp-orange);
+}
+
+.noteitem:hover {
+  filter: brightness(1.2);
+}
+
+.noteitem__body-wrapper {
+  padding: 1rem;
+  overflow-wrap: break-word;
+}
+
+.noteitem__body-tgl {
+  font-size: 0.7rem;
+  font-style: italic;
+  margin: 0.5rem 0;
+}
+
+.noteitem__body-description {
+  font-size: 0.8rem;
+}
+
+.noteitem__option {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0.5rem 0;
+}
+
+.noteitem__option-btn {
+  width: 20px;
+  height: 20px;
+  background-color: var(--cp-white);
+  border: none;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.noteitem__option-btn.trash {
+  background: url("../assets/ic_trash-outline.svg");
+  background-size: auto;
+  background-size: contain;
+}
+
+.noteitem__option-btn.trash:hover {
+  background: url("../assets/ic_trash-fill.svg");
+  background-size: contain;
+}
+
+.noteitem__option-btn.edit {
+  background: url("../assets/ic_edit-outline.svg");
+  background-size: auto;
+  background-size: contain;
+}
+
+.noteitem__option-btn.edit:hover {
+  background: url("../assets/ic_edit-fill.svg");
+  background-size: contain;
+}
+
+.noteitem__option-btn.archive {
+  width: 23px;
+  height: 23px;
+  background: url("../assets/ic_bookmark-outline.svg");
+  background-size: contain;
+}
+
+.noteitem__option-btn.archive:hover {
+  background: url("../assets/ic_bookmark-fill.svg");
+  background-size: contain;
+}
+
+.noteitem__option-btn.archive.archived {
+  background: url("../assets/ic_bookmark-fill.svg");
+  background-size: contain;
+}
+
+.noteitem-editmode {
+  height: max-content;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--cp-orange);
+}
+
+.active-edit {
+  background-color: var(--cp-grey) !important;
+}
+
+
+.noteitem-editmode__title-limit-char {
+  text-align: right;
+  font-size: .5rem;
+}
+
+.noteitem-editmode__body-wrapper {
+  padding: 1rem;
+  overflow-wrap: break-word;
+}
+
+.noteitem-editmode__title {
+  border: none;
+  background-color: var(--cp-orange);
+  font-size: large;
+  font-weight: bold;
+  width: 100%;
+  outline: none;
+}
+
+.noteitem-editmode__tgl {
+  font-size: 0.7rem;
+  font-style: italic;
+  margin: 0.5rem 0;
+  border: none;
+  background-color: var(--cp-orange);
+  outline: none;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  height: 200px;
+}
+
+.noteitem-editmode__desc {
+  border: none;
+  font-size: 0.8rem;
+  background-color: var(--cp-orange);
+  width: 100%;
+  outline: none;
+}
+
+.noteitem-editmode__option {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0.5rem 0;
+}
+
+.noteitem-editmode__option-btn {
+  width: 25px;
+  height: 25px;
+  background-color: var(--cp-white);
+  border: none;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.noteitem-editmode__option-btn.checklis {
+  background: url("../assets/ic_check_outline.svg");
+  background-size: auto;
+  background-size: contain;
+}
+
+.noteitem-editmode__option-btn.checklis:hover {
+  background: url("../assets/ic_check_fill.svg");
+  background-size: contain;
+}
