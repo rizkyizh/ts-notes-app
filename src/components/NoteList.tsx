@@ -34,6 +34,7 @@ function NoteList({
                 createdAt={note.createdAt}
                 body={note.body}
                 onEditedNoteById={onEditedNoteById}
+                onDeleteNoteChange={onDeleteNoteChange}
               />
             )
           )

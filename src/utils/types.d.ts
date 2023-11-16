@@ -91,6 +91,7 @@ declare interface NoteItemEditModeProps {
     title: string;
     desc: string;
   }) => void
+  onDeleteNoteChange: MouseEventHandler<HTMLButtonElement>
 }
 
 declare type ButtonAddNoteProps = {

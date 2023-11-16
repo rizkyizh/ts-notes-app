@@ -78,6 +78,10 @@ class NoteItemEditMode extends React.Component<
           </div>
           <div className="noteitem-editmode__option">
             <button
+              onClick={() => this.props.onDeleteNoteChange(this.props.id)}
+              className="noteitem__option-btn trash"
+            ></button>
+            <button
               type="submit"
               className="noteitem-editmode__option-btn checklis"
             ></button>
