@@ -31,8 +31,15 @@
 }
 
 .notes-app__container {
-  display: grid;
   grid-template-columns: 240px auto;
+}
+
+/* media query */
+@media (min-width: 600px) {
+  .notes-app__container{
+    display: grid;
+  }
+
 }
 
 .button-add-note__btn-add {
@@ -48,7 +55,7 @@
 }
 
 .sidebar__container {
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -121,6 +128,7 @@
 }
 
 .notelist__container {
+  min-height: 100vh;
   display: grid;
   gap: 1rem;
   padding: 1rem;
